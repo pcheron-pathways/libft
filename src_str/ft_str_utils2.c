@@ -1,7 +1,7 @@
 
 #include "../include/libft.h"
 
-int	ft_instr(char const *str, char c, int l)
+int	ft_instr(char const *str, char c)
 {
 	size_t	i;
 
@@ -12,8 +12,5 @@ int	ft_instr(char const *str, char c, int l)
 			return (i + 1);
 		i++;
 	}
-	if (l)
-		return (i);
 	return (0);
 }
-
