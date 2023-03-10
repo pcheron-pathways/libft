@@ -6,12 +6,14 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:10:46 by pcheron           #+#    #+#             */
-/*   Updated: 2023/03/03 13:52:29 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/03/10 21:43:55 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFFER_SIZE 42
 
 # include <fcntl.h>
 # include <stdarg.h>
@@ -35,20 +37,26 @@ int					ft_strslen(char **strs);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strdup(char *s);
 // str2
-int					ft_instr(char const *str, char c, int l);
+int					ft_instr(char const *str, char c);
+void				ft_strreplace(char *str, char find, char replace);
 
 // memory
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 
 // strs
-char				**ft_free_strs(char **strs, int j);
+char				**ft_free_strs(char **strs);
 char				**ft_split(char const *s, char c);
 
 // print
 int					ft_putstr_fd(char *str, int fd);
 int					ft_print_fd(int fd, char *str, ...);
 
-// t_lst
+// t_lst / gnl utils
+char				*ft_get_next_line(int fd);
+t_list				*ft_lstnew(char *content);
+int					ft_lstadd_back(t_list *lst, t_list *new);
+t_list				*ft_lstclear(t_list *lst);
+int					ft_instr2(char const *str, char c);
 
 #endif

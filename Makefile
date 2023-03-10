@@ -7,7 +7,8 @@ CFLAGS = -Wall -Werror -Wextra -g
 AR = ar -rcs
 
 # sources
-SRC = 	src_gnl/ft_get_next_line.c \
+SRC = 	src_gnl/get_next_line.c \
+		src_gnl/get_next_line_utils.c \
 		src_str/ft_str_utils1.c \
 	 	src_str/ft_str_utils2.c \
 		src_str/ft_split.c \

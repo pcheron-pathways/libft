@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split.c                                            :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:36:39 by pcheron           #+#    #+#             */
-/*   Updated: 2023/02/21 21:19:57 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/03/05 16:05:18 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	**ft_free_strs(char **strs, int j)
+char	**ft_free_strs(char **strs)
 {
-	while (j > -1)
+	int	i;
+
+	i = 0;
+	while (strs[i])
 	{
-		free(strs[j]);
-		j--;
+		free(strs[i]);
+		i++;
 	}
 	free(strs);
 	return (NULL);
@@ -74,7 +77,7 @@ static char	**ft_split2(char const *s, char **strs, char c, int i)
 	{
 		strs[j] = malloc(sizeof(char) * (ft_lenw(s, c, i) + 1));
 		if (strs[j] == NULL)
-			return (ft_free_strs(strs, j));
+			return (ft_free_strs(strs));
 		k = 0;
 		while (s[i] && s[i] == c)
 			i++;

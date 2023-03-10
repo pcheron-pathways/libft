@@ -6,12 +6,12 @@
 /*   By: pcheron <pcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:30:35 by pcheron           #+#    #+#             */
-/*   Updated: 2023/03/01 00:14:02 by pcheron          ###   ########.fr       */
+/*   Updated: 2023/03/04 17:43:06 by pcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../include/libft.h"
+#include <stdio.h>
 
 static int	ft_arg_len(char c, va_list args)
 {
@@ -119,7 +119,7 @@ int	ft_print_fd(int fd, char *str, ...)
 	va_start(args, str);
 	ft_setup_print(print, str, args);
 	va_end(args);
-	r = ft_putstr_fd(fd, print);
+	r = ft_putstr_fd(print, fd);
 	free(print);
 	return (r);
 }
